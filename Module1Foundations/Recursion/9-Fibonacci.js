@@ -10,8 +10,10 @@ Output: 2
 Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2. */
 
 var fib = function (n) {
-  if (n == 0) return 0;
-  if (n == 1) return 1;
+  // if (n == 0) return 0;
+  // if (n == 1) return 1;
+  // bit more standardised with 1 if statement
+  if (n <= 1) return n;
   else {
     return fib(n - 1) + fib(n - 2);
   }
