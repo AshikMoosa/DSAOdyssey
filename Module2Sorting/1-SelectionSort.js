@@ -3,14 +3,14 @@ import swap from "./0-GlobalSwap.js";
 function selectionSort(arr, n) {
   console.log(arr);
 
-  for (let i = 0; i <= n - 2; i++) {
-    let min = i;
-    for (let j = i; j <= n - 1; j++) {
-      if (arr[j] <= arr[min]) {
-        min = j; // find min index & not min value
+  for (let i = 0; i < n - 1; i++) {
+    let minIdx = i;
+    for (let j = i; j < n; j++) {
+      if (arr[j] <= arr[minIdx]) {
+        minIdx = j; // find minIdx index & not minIdx value
       }
     }
-    swap(arr, i, min);
+    swap(arr, i, minIdx);
     console.log(`Iteration: ${i + 1}`, arr);
   }
 
