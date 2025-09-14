@@ -46,6 +46,7 @@ function removeDuplicatesUsingTwoPtr(arr, n) {
   let i = 0;
   j = 0;
   while (j < n) {
+    // Found unique number
     if (arr[i] !== arr[j]) {
       i++;
       arr[i] = arr[j];

@@ -11,6 +11,7 @@ Output: [0, 3, 6, -1]
 Explanation: Initially, nums = [-1, 0, 3, 6]
 Rotating once to left -> nums = [0, 3, 6, -1] */
 
+// Appr 1 - BF - use temp var and loop through array - O(n)
 function rotateArray(arr, n) {
   let temp = arr[0];
   for (let i = 1; i < n; i++) {
