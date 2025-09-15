@@ -6,7 +6,7 @@ Output: nums = [3, 4, 5, 6, 1, 2]
 Explanation: rotate 1 step to the left: [2, 3, 4, 5, 6, 1]
 rotate 2 steps to the left: [3, 4, 5, 6, 1, 2] */
 
-// Appr 1 - BF - use temp var and loop through array - O(n*k) or O(n^2) if k=n
+// Appr 1 - Brute - use temp var and loop through array - O(n*k) or O(n^2) if k=n & S(1)
 function kRotateArray(arr, n, k) {
   while (k != 0) {
     let temp = arr[0];

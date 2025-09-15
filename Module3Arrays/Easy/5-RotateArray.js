@@ -11,7 +11,20 @@ Output: [0, 3, 6, -1]
 Explanation: Initially, nums = [-1, 0, 3, 6]
 Rotating once to left -> nums = [0, 3, 6, -1] */
 
-// Appr 1 - BF - use temp var and loop through array - O(n)
+// Appr 1 - Brute - use newArr arrayand temp var and copy elements to it - O(n) & S(n)
+function rotateArrayBR(arr, n) {
+  let newArr = new Array();
+  let temp = arr[0];
+  for (let i = 1; i < n; i++) {
+    newArr.push(arr[i]);
+  }
+  newArr.push(temp);
+  return newArr;
+}
+
+console.log(rotateArrayBR([-1, 0, 3, 6], 4));
+
+// Appr 3 - Optimal - use temp var and loop through array - O(n) & S(1)
 function rotateArray(arr, n) {
   let temp = arr[0];
   for (let i = 1; i < n; i++) {
