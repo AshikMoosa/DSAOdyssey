@@ -39,7 +39,7 @@ Derivation: You are not creating any new data structures except for the temp arr
 The size of the temp array is k.
 Therefore, your extra space complexity is O(k).
 */
-function kRotateArrayBR(arr, n, k) {
+function kRotateArrayBT(arr, n, k) {
   k = k % n; // Handling unwanted thousands of rotation - eg above in algo - O(1) & S(1)
 
   const temp = arr.slice(0, k); // O(k) & S(k)
@@ -58,7 +58,7 @@ function kRotateArrayBR(arr, n, k) {
   }
   return arr; // O(1) & S(1)
 }
-console.log(kRotateArrayBR([1, 2, 3, 4, 5, 6], 6, 6));
+console.log(kRotateArrayBT([1, 2, 3, 4, 5, 6], 6, 6));
 
 // Appr 3 - Optimal - O(n) & S(1)
 /* Algo -  algorithm has 3 steps:
