@@ -40,3 +40,40 @@ var missingNumberBT = function (nums) {
 };
 
 console.log(missingNumberBT([0, 1, 3]));
+
+// Appr 3 - Optimal - 1 - Hashing pattern - O(n) & S(n)
+function missingNumber1(nums) {
+  let n = nums.length;
+  let hashArray = Array(n + 1).fill(0);
+  for (let i = 0; i < n; i++) {
+    hashArray[nums[i]]++;
+  }
+  return hashArray.indexOf(0);
+}
+
+console.log(missingNumber1([0, 1, 3]));
+
+// Appr 3 - Optimal - 2 - Math Pattern - Gauss Summation - O(n) & S(1)
+function missingNumber2(nums) {
+  let n = nums.length;
+  let expected = (n * (n + 1)) / 2; // sum of n numbers
+  let actual = 0;
+  for (let i = 0; i < n; i++) {
+    actual += nums[i]; // sum of all numbers of nums array
+  }
+  return expected - actual; // missing number is difference
+}
+
+console.log(missingNumber2([0, 1, 3]));
+
+// Appr 3 - Optimal - Bitwise XOR pattern - O(n) & S(1)
+function missingNumber3(nums) {
+  let n = nums.length;
+  let missing = n;
+  for (let i = 0; i < n; i++) {
+    missing = missing ^ i ^ nums[i]; // A^A = 0, A^0 = A
+  }
+  return missing;
+}
+
+console.log(missingNumber3([0, 1, 3]));
