@@ -58,3 +58,30 @@ function longestSubArrayBT(arr, n, k) {
   return maxLength;
 }
 console.log(longestSubArrayBT([10, 5, 2, 7, 1, 9], 6, 15));
+
+// Appr 3 - Optimal - Variable Sliding Window -  O(n) & S(1)
+function longestSubArrayOptimal(arr, n, k) {
+  let longest = 0;
+  let sum = 0;
+  let i = 0; // The 'left' pointer of the window
+  let j = 0; // The 'right' pointer of the window
+
+  while (j < n) {
+    // --- Step 1: Grow the window ---
+    sum = sum + arr[j];
+
+    // --- Step 2: Shrink the window if the sum is too large ---
+    // This loop runs ONLY when needed.
+    while (sum > k && i <= j) {
+      sum = sum - arr[i];
+      i++;
+    }
+
+    if (sum === k) {
+      longest = Math.max(longest, j - i + 1);
+    }
+    j++;
+  }
+  return longest;
+}
+console.log(longestSubArrayBF([1, 15, 2], 3, 15));
