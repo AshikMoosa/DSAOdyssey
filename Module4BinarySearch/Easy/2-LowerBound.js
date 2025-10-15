@@ -41,3 +41,5 @@ function lowerBound(arr, n, target) {
 }
 
 console.log(lowerBound([2, 2, 3], 3, 2));
+
+export default lowerBound;

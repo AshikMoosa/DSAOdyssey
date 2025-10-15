@@ -37,3 +37,5 @@ function upperBound(arr, n, target) {
 }
 
 console.log(upperBound([1, 2, 2, 3, 3], 5, 2));
+
+export default upperBound;
