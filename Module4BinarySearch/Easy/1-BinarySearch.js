@@ -19,9 +19,9 @@ function binarySearch(nums, target) {
 
   while (start <= end) {
     let mid = start + Math.floor((end - start) / 2);
-    if (target === nums[mid]) {
+    if (nums[mid] === target) {
       return mid;
-    } else if (target < nums[mid]) {
+    } else if (nums[mid] > target) {
       end = mid - 1;
     } else {
       start = mid + 1;
