@@ -46,3 +46,5 @@ function firstLastOccurence(arr, n, target) {
   return [first, last];
 }
 console.log(firstLastOccurence([5, 7, 7, 8, 8, 10], 6, 8));
+
+export default firstLastOccurence;
